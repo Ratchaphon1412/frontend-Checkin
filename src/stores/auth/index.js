@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {axiosInstance} from '../../utils/api/axiosIntance';
 
 const initialStateAuth = {
     isAuth: false,
@@ -13,6 +14,8 @@ reducers: {
         const { email, password } = action.payload;
         state.email = email;
         state.password = password;
+        const response = axiosInstance.post("/login", {email:email, password:password});
+        
         
 
     }
