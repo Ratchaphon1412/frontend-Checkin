@@ -1,5 +1,8 @@
 import React,{useState} from 'react'
 import Base from '../layouts/base'
+import { createAction, nanoid } from '@reduxjs/toolkit'
+import { useSelector, useDispatch } from 'react-redux'
+import {login} from '../stores/auth/index'
 
 
 
@@ -8,12 +11,29 @@ function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const emailState = useSelector(state => state.authStore.email);
+    const passwordState = useSelector(state => state.authStore.password);
+    const dispatch = useDispatch()
+
+
+
     const handleChangeEmail = (e)=>{
         setEmail(e.target.value);
     }
 
     const handleChangePassword = (e)=>{
         setPassword(e.target.value);
+        
+    }
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        console.log(email,password)
+        
+    
+
+        dispatch(login({email,password} ))
+        console.log(emailState,passwordState)
     }
 
 
@@ -51,7 +71,7 @@ function Login(){
                       </div>
                       <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                   </div>
-                  <button type="submit" className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                  <button type="submit" className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" onClick={handleSubmit}>Sign in</button>
            
               </form>
           </div>
