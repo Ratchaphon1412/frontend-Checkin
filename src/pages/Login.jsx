@@ -10,6 +10,7 @@ import {login} from '../stores/auth/index'
 function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    
 
     const emailState = useSelector(state => state.authStore.email);
     const passwordState = useSelector(state => state.authStore.password);
@@ -78,8 +79,7 @@ function Login(){
       </div>
   </div>
 </section>
-        </Base>
-    )
+</Base>)
 }
 
 export default Login;
