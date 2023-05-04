@@ -10,6 +10,7 @@ import {
 
 import { store } from './stores/config.js'
 import { Provider } from 'react-redux'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const router = createBrowserRouter([
   {
