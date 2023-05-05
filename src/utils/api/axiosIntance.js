@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 // const baseURL = 'https://ratchaphon1412.co/';
-const baseURL = 'http://localhost:8000/';
+const baseURL = 'https://ill-pear-jackrabbit-wrap.cyclic.app/';
 
 const axiosInstance = axios.create({
   baseURL,
@@ -10,13 +10,13 @@ const axiosInstance = axios.create({
 
 });
 
-// axiosInstance.interceptors.request.use((config) => {
+axiosInstance.interceptors.request.use((config) => {
+ 
   
-  
-//   if () {
-//     config.headers.Authorization = `Bearer ${localStorage.getItem('authentication')}`;
-//   }
-//   return config;
-// });
+  if (localStorage.getItem('token')) {
+    config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  }
+  return config;
+});
 
 export default axiosInstance;
