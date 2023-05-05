@@ -7,9 +7,7 @@ function Recent(){
 <div class="w-full max-w-md  mt-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
     <div class="flex items-center justify-between mb-4">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
-        <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-            View all
-        </a>
+        <i class="bi bi-plus-circle-fill text-gray-700 font-bold text-xl"></i>
    </div>
    <div class="flow-root">
         <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -26,9 +24,7 @@ function Recent(){
                             email@windster.com
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $320
-                    </div>
+            
                 </div>
             </li>
             <li class="py-3 sm:py-4">
@@ -44,9 +40,7 @@ function Recent(){
                             email@windster.com
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $3467
-                    </div>
+           
                 </div>
             </li>
             <li class="py-3 sm:py-4">
@@ -62,9 +56,7 @@ function Recent(){
                             email@windster.com
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $67
-                    </div>
+         
                 </div>
             </li>
             <li class="py-3 sm:py-4">
@@ -80,9 +72,7 @@ function Recent(){
                             email@windster.com
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $367
-                    </div>
+            
                 </div>
             </li>
             <li class="pt-3 pb-0 sm:pt-4">
@@ -98,9 +88,7 @@ function Recent(){
                             email@windster.com
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $2367
-                    </div>
+           
                 </div>
             </li>
         </ul>
