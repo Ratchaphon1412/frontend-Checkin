@@ -21,17 +21,17 @@ function SlideBar({styleClass}){
         if(isAuthenticated){
             component = <>          
         <li>
-            <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+            <Link to={`/dashboard`} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
             <i class="bi bi-newspaper text-gray-700 font-bold text-xl"></i>
             <span className="ml-3">News feed</span>
-            </a>
+            </Link>
         </li>
         <li>
-            <a href="#" target="_blank" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Link to={`/point`} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
             <i class="bi bi-star-fill text-gray-700 font-bold text-xl"></i>
             <span className="flex-1 ml-3 whitespace-nowrap">Reward & stars point</span>
             
-            </a>
+            </Link>
         </li>
         <li>
             <a href="#" target="_blank" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
