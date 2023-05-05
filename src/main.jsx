@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import 'tw-elements';
 import App from './App.jsx'
 import Login from './pages/Login.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import Point from './pages/Point.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <ProtectedRoute component={<Dashboard/>} />,
+  },
+  {
+    path: "/point",
+    element: <ProtectedRoute component={<Point/>} />,
   }
 
 ]);
