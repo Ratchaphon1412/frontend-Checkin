@@ -1,19 +1,20 @@
 import React,{useState} from 'react'
 import Base from '../layouts/base'
-import { createAction, nanoid } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
 import {login} from '../stores/auth/index'
-
-
+import { useNavigate } from "react-router-dom";
 
 
 function Login(){
+
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+    const navigate = useNavigate();
 
     const emailState = useSelector(state => state.authStore.email);
     const passwordState = useSelector(state => state.authStore.password);
+   
     const dispatch = useDispatch()
 
 
@@ -27,14 +28,16 @@ function Login(){
         
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault();
         console.log(email,password)
-        
+        await dispatch(login({email,password} ))
+       
+        navigate("/dashboard");
+       
     
 
-        dispatch(login({email,password} ))
-        console.log(emailState,passwordState)
+
     }
 
 
