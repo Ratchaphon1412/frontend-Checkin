@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Login from './pages/Login.jsx'
+import Dashboard from './pages/Dashboard.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -11,6 +12,9 @@ import {
 import { store } from './stores/config.js'
 import { Provider } from 'react-redux'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+
+import  ProtectedRoute from './routers/protectRouter';
+
 
 const router = createBrowserRouter([
   {
@@ -23,7 +27,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <App />,
+    element: <ProtectedRoute component={<Dashboard/>} />,
   }
 
 ]);
@@ -34,7 +38,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
    
     <RouterProvider router={router} />
-    </Provider>,
+    </Provider>
    
-  </React.StrictMode>,
+  </React.StrictMode>
 )
