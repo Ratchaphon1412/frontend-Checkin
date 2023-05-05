@@ -12,8 +12,8 @@ function Navbar(){
 
     return(
 
-<div>
-<nav className="bg-white border-gray-200 dark:bg-gray-900 ">
+<div className="">
+<nav className="bg-white border-gray-200 w-full  top-0 fixed  ">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="https://flowbite.com/" className="flex items-center">
         <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo" />
@@ -25,9 +25,9 @@ function Navbar(){
     </button> */}
  
     <div className=" md:block md:w-auto" id="navbar-default">
-      <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <ul className="font-medium flex flex-col   border  border-gray-100 rounded-lg bg-gray-50  md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
          <li>
-         <i class="bi bi-list text-3xl font-bold" onClick={handleToggle}></i>
+         <i className="bi bi-list text-3xl font-bold" onClick={handleToggle}></i>
          
          </li>
       </ul>
@@ -36,9 +36,9 @@ function Navbar(){
   </div>
 </nav>
 
-      <SlideBar styleClass={toggle? '':'hidden'}/>
+      
 
-</div>
+<SlideBar styleClass={toggle? '':'hidden'}/></div>
 
 
     );
