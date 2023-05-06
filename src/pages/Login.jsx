@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Base from '../layouts/base'
-import { useSelector, useDispatch } from 'react-redux'
+import {  useDispatch } from 'react-redux'
 import {login} from '../stores/auth/index'
 import { useNavigate } from "react-router-dom";
 
@@ -12,8 +12,6 @@ function Login(){
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const emailState = useSelector(state => state.authStore.email);
-    const passwordState = useSelector(state => state.authStore.password);
    
     const dispatch = useDispatch()
 
@@ -28,10 +26,9 @@ function Login(){
         
     }
 
-    const handleSubmit = async (e)=>{
+    const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(email,password)
-        await dispatch(login({email,password} ))
+        dispatch(login({email,password} ))
        
         navigate("/dashboard");
        
