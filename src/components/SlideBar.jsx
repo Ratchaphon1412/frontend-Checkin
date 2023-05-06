@@ -34,11 +34,11 @@ function SlideBar({styleClass}){
             </Link>
         </li>
         <li>
-            <a href="#" target="_blank" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Link to={`/calendar`} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
             <i class="bi bi-calendar-check text-gray-700 font-bold text-xl"></i>
             <span className="flex-1 ml-3 whitespace-nowrap">Check-in</span>
            
-            </a>
+            </Link>
         </li>
         <li>
             <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
