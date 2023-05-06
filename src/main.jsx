@@ -6,6 +6,7 @@ import Login from './pages/Login.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Point from './pages/Point.jsx'
 import CalendarPage from './pages/Calendar.jsx'
+import Consign from './pages/Consign.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   },{
     path: "/calendar",
     element: <ProtectedRoute component={<CalendarPage/>} />,
+  },
+  {
+    path:"Consign",
+    element:<ProtectedRoute component={<Consign/>} />,
   }
 
 ]);
