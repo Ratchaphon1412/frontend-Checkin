@@ -1,6 +1,6 @@
 import React from 'react'
 import PropType from 'prop-types'
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux' 
 import {auth,logout} from '../stores/auth/index'
 
@@ -10,8 +10,8 @@ function SlideBar({styleClass}){
         const dispatch = useDispatch();
         dispatch(auth());
         const isAuthenticated  = useSelector(state => state.authStore.isAuth);
-        console.log(isAuthenticated);
-
+        const emailState = useSelector(state => state.authStore.email);
+        console.log(emailState);
         function logoutSystem(){
             dispatch(logout());
         }
