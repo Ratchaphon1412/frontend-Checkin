@@ -11,7 +11,7 @@ export const login = createAsyncThunk('auth/login', async ({ email, password }) 
   
 
 
-const initialStateAuth = {
+let initialStateAuth = {
     isAuth: false,
     user:null,
     email:'',
