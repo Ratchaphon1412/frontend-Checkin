@@ -6,7 +6,7 @@ function Navbar(){
    const [toggle,setToggle] = useState(false);
 
    function handleToggle(){
-      console.log(toggle)
+      
       setToggle(!toggle);
    }
 
