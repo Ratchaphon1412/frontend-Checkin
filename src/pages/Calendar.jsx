@@ -1,25 +1,43 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import EmployeeCalendar from '../components/EmployeeCalendar.jsx';
 import Base from '../layouts/Base.jsx'
 import moment from 'moment';
+import  {useDispatch,useSelector} from 'react-redux'
+import {getHistory} from '../stores/api/index'
+import { func } from 'prop-types';
+
+
 
 function CalendarPage() {
-    const markedDates = [
-        "2023-05-05",
-        "2023-05-10",
-        "2023-05-15",
-      ];
-
-      function formatDate(markedDates){
+    const dispatch = useDispatch();
+    const history = useSelector(state => state.apiStore.date)
+    function formatDate(markedDates){
+        
         markedDates.forEach((date, index) => {
             let newDate = moment(date).subtract(1, "days");
             markedDates[index] = newDate.format('YYYY-MM-DD');
         }   
       )
       console.log(markedDates)
+   
       return markedDates;
     }
-    formatDate(markedDates)
+    useEffect(() => { 
+        dispatch(getHistory())
+        formatDate(history)
+       
+     }   , [])
+    
+    
+    
+    const markedDates = [
+        "2023-05-05",
+        "2023-05-10",
+        "2023-05-15",
+      ];
+
+     
+    
 
     return (
         <Base>
@@ -39,7 +57,7 @@ function CalendarPage() {
             
             <div  className='flex flex-col justify-start'>
             <h1 className="text-xl mr-6 mb-4">Check-in for daily</h1>  
-            <EmployeeCalendar markedDates={markedDates} />
+            <EmployeeCalendar markedDates={history} />
             </div>
 
             <div className="h-96 flex flex-col justify-center items-center">
