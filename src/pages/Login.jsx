@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import Base from '../layouts/base'
+import Base from '@/layouts/base'
 import {  useDispatch } from 'react-redux'
-import {login} from '../stores/auth/index'
+import {login} from '@/stores/auth/index'
 import { useNavigate } from "react-router-dom";
 
 

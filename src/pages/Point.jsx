@@ -1,8 +1,8 @@
 import React,{useEffect} from 'react'
-import Base from '../layouts/base'
-import CardReward from '../components/CardReward';
+import Base from '@/layouts/base'
+import CardReward from '@/components/CardReward';
 import {Link, useNavigate} from 'react-router-dom'
-import {getCoin} from '../stores/api/index'
+import {getCoin} from '@/stores/api/index'
 import {useSelector,useDispatch} from 'react-redux'
 function  Point(){
     const dispatch = useDispatch();

@@ -2,7 +2,7 @@ import React from 'react'
 import PropType from 'prop-types'
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux' 
-import {auth,logout} from '../stores/auth/index'
+import {auth,logout} from '@/stores/auth/index'
 
 
 function SlideBar({styleClass}){

@@ -1,8 +1,8 @@
 import React, { useEffect,useState } from 'react'
 import Base from '@/layouts/base'
-import FormConsign from '../components/FormConsign';
+import FormConsign from '@/components/FormConsign';
 import {useSelector,useDispatch} from 'react-redux'
-import {getCoin} from '../stores/api/index'
+import {getCoin} from '@/stores/api/index'
 
 function  Consign(){
    const dispatch = useDispatch();
