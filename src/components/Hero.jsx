@@ -1,5 +1,5 @@
 import Container from "./Container";
-import heroImg from "../assets/img/hero.png";
+import heroImg from "@/assets/img/hero.png";
 
 const Hero = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react'
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import imageDash1 from '../assets/img/imageDash1.jpg'
-import imageDash2 from '../assets/img/imageDash2.jpg'
-import imageDash3 from '../assets/img/imageDash3.jpg'
+import imageDash1 from '@/assets/img/imageDash1.jpg'
+import imageDash2 from '@/assets/img/imageDash2.jpg'
+import imageDash3 from '@/assets/img/imageDash3.jpg'
 
 function  Carousel(){
    

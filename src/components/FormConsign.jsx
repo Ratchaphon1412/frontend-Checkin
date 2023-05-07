@@ -1,7 +1,7 @@
 import React,{useState}from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import { useConsign} from '../stores/api/index'
-import {setEmail} from '../stores/auth/index'
+import { useConsign} from '@/stores/api/index'
+import {setEmail} from '@/stores/auth/index'
 import {useNavigate} from 'react-router-dom'
 
 
