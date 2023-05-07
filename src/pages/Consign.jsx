@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import Base from '../layouts/base'
+import Base from '@/layouts/base'
 import FormConsign from '../components/FormConsign';
 import {useSelector,useDispatch} from 'react-redux'
 import {getCoin} from '../stores/api/index'
