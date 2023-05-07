@@ -10,8 +10,8 @@ function SlideBar({styleClass}){
         const dispatch = useDispatch();
         dispatch(auth());
         const isAuthenticated  = useSelector(state => state.authStore.isAuth);
-        const emailState = useSelector(state => state.authStore.email);
-        console.log(emailState);
+  
+  
         function logoutSystem(){
             dispatch(logout());
         }
