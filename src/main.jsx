@@ -1,8 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import 'tw-elements';
 import App from './App.jsx'
 import Login from './pages/Login.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import Point from './pages/Point.jsx'
+import CalendarPage from './pages/Calendar.jsx'
+import Consign from './pages/Consign.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -28,6 +32,17 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <ProtectedRoute component={<Dashboard/>} />,
+  },
+  {
+    path: "/point",
+    element: <ProtectedRoute component={<Point/>} />,
+  },{
+    path: "/calendar",
+    element: <ProtectedRoute component={<CalendarPage/>} />,
+  },
+  {
+    path:"Consign",
+    element:<ProtectedRoute component={<Consign/>} />,
   }
 
 ]);

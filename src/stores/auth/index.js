@@ -11,12 +11,12 @@ export const login = createAsyncThunk('auth/login', async ({ email, password }) 
   
 
 
-const initialStateAuth = {
+let initialStateAuth = {
     isAuth: false,
     user:null,
     email:'',
     password:'',
-    token: null,
+    token:'',
 }
 
 export  const  authSlice = createSlice({name:'auth', initialState: initialStateAuth, 
@@ -30,7 +30,12 @@ reducers: {
 
 
     },
-
+    setEmail:(state,action)=>{
+      if (localStorage.getItem('email')) {
+        state.email = localStorage.getItem('email');
+      }
+    },
+   
     logout: (state) => {
         localStorage.removeItem('token');
     }
@@ -47,6 +52,7 @@ extraReducers:(builder) => {
         state.email = action.payload.email;
         state.token = action.payload.token;
         localStorage.setItem('token', action.payload.token);
+        localStorage.setItem('email', action.payload.email);
        
       })
       .addCase(login.rejected, (state, action) => {
@@ -56,5 +62,5 @@ extraReducers:(builder) => {
   },
 });
 
-export const {auth,logout} = authSlice.actions;
+export const {auth,logout,setEmail} = authSlice.actions;
 export default authSlice.reducer;

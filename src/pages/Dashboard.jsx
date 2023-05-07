@@ -8,7 +8,7 @@ function Dashboard(){
     return(
         
            <Base>
-            <div className='h-screen w-full '>
+            <div className='h-full w-full '>
                 <div className="flex flex-col justify-center items-center">
                     <Carousel/>
                     <Recent/>

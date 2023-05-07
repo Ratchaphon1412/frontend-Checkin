@@ -1,10 +1,12 @@
 import React  from 'react';
 import PropType from 'prop-types'
 import { Navigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 function ProtectedRoute({component}) {
-    
-    if(localStorage.getItem("token")){
+    // const token = useSelector((state)=> state.authStore.token)
+  
+    if(localStorage.getItem('token')){
         return component
     }else{
         
