@@ -18,6 +18,12 @@ export const useConsign = createAsyncThunk('api/consign', async ({ emailFrom, em
     return data;
  }); 
 
+ export const checkIn = createAsyncThunk('api/checkIn', async ({dateCheckIn}) => {
+  const response = await axiosInstance.post('api/checkin',{dateCheckIn});
+  const data = await response.data;
+  return data;
+ });
+
 export const getHistory = createAsyncThunk('api/userDateCheckIn', async () => {
   const  response = await axiosInstance.get('api/userDateCheckIn');
   const  data = await response.data;
@@ -79,7 +85,18 @@ export  const  apiSlice = createSlice({name:'api', initialState: initialStateAPI
             state.status = 'failed';
             state.error = action.error.message;
           } )
-
+          .addCase(checkIn.pending, (state) => {
+            state.status = 'loading';
+          })
+          .addCase(checkIn.fulfilled, (state, action) => {
+            state.status = 'succeeded';
+            state.code = action.payload.code;
+           
+          } )
+          .addCase(checkIn.rejected, (state, action) => {
+            state.status = 'failed';
+            state.error = action.error.message;
+          } )
       },
     });
 

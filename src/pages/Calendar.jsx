@@ -3,30 +3,40 @@ import EmployeeCalendar from '@/components/EmployeeCalendar.jsx';
 import Base from '@/layouts/base.jsx'
 import moment from 'moment';
 import  {useDispatch,useSelector} from 'react-redux'
-import {getHistory} from '@/stores/api/index'
-import { func } from 'prop-types';
+import {getHistory,checkIn} from '@/stores/api/index'
 
 
 
 function CalendarPage() {
     const dispatch = useDispatch();
+    const [showDate, setShowDate] = useState([]);
     const history = useSelector(state => state.apiStore.date)
-    function formatDate(markedDates){
+
+    // function formatDate(markedDates){
         
-        markedDates.forEach((date, index) => {
-            let newDate = moment(date).subtract(1, "days");
-            markedDates[index] = newDate.format('YYYY-MM-DD');
-        }   
-      )
-      console.log(markedDates)
+    //     markedDates.forEach((date, index) => {
+    //         let newDate = moment(date).subtract(1, "days");
+    //         markedDates[index] = newDate.format('YYYY-MM-DD');
+    //     }   
+    //   )
+    //   console.log(markedDates)
    
-      return markedDates;
-    }
+    //   return markedDates;
+    // }
     useEffect(() => { 
         dispatch(getHistory())
-        formatDate(history)
+        setShowDate(history);
+        // formatDate(history)
        
      }   , [])
+
+     function handleClickCheckin(){
+        let dateCheckIn = moment().format('YYYY-MM-DD')
+      
+        dispatch(checkIn({dateCheckIn}))
+        dispatch(getHistory())
+        setShowDate(history);
+     }
     
     
     
@@ -61,7 +71,7 @@ function CalendarPage() {
             </div>
 
             <div className="h-96 flex flex-col justify-center items-center">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl">Click-in-today</button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl" onClick={ handleClickCheckin}>Click-in-today</button>
             </div>
         </div>
 
