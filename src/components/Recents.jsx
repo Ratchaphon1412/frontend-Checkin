@@ -4,9 +4,9 @@ function Recent(){
 
     return(
 
-<div className="w-full max-w-md  mt-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-    <div className="flex items-center justify-between mb-4">
-        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
+<div className="w-full max-w-md  mt-4 bg-white border border-gray-200 rounded-lg shadow p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div className="flex items-center justify-between mb-4 p-5">
+        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Recent</h5>
         <i className="bi bi-plus-circle-fill text-gray-700 font-bold text-xl"></i>
    </div>
    <div className="flow-root">
