@@ -20,34 +20,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import  ProtectedRoute from './routers/protectRouter';
 
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//   },
-//   {
-//     path: "/login",
-//     element: <Login />,
-//   },
-//   {
-//     path: "/dashboard",
-//     element: <ProtectedRoute component={<Dashboard/>} />,
-//   },
-//   {
-//     path: "/point",
-//     element: <ProtectedRoute component={<Point/>} />,
-//   },{
-//     path: "/calendar",
-//     element: <ProtectedRoute component={<CalendarPage/>} />,
-//   },
-//   {
-//     path:"Consign",
-//     element:<ProtectedRoute component={<Consign/>} />,
-//   }
-
-// ]);
-
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,21 +31,49 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard/>,
+    element: <ProtectedRoute component={<Dashboard/>} />,
   },
   {
     path: "/point",
-    element: <Point/>,
+    element: <ProtectedRoute component={<Point/>} />,
   },{
     path: "/calendar",
-    element: <CalendarPage/>,
+    element: <ProtectedRoute component={<CalendarPage/>} />,
   },
   {
     path:"Consign",
-    element:<Consign/>,
+    element:<ProtectedRoute component={<Consign/>} />,
   }
 
 ]);
+
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App />,
+//   },
+//   {
+//     path: "/login",
+//     element: <Login />,
+//   },
+//   {
+//     path: "/dashboard",
+//     element: <Dashboard/>,
+//   },
+//   {
+//     path: "/point",
+//     element: <Point/>,
+//   },{
+//     path: "/calendar",
+//     element: <CalendarPage/>,
+//   },
+//   {
+//     path:"Consign",
+//     element:<Consign/>,
+//   }
+
+// ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
