@@ -5,7 +5,7 @@ import axiosInstance from '../../utils/api/axiosIntance.js';
 export const login = createAsyncThunk('auth/login', async ({ email, password }) => {
     const response = await axiosInstance.post('/api/signin', { email, password });
     const data = await response.data;
-    console.log(data)
+ 
     return data;
   });
   

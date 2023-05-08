@@ -11,7 +11,7 @@ function Dashboard(){
             <div className='h-full w-full '>
                 <div className="flex flex-col justify-center items-center">
                     <Carousel/>
-                    <Recent/>
+                    {/* <Recent/> */}
                     <Describtions/>
                 </div>
             </div>

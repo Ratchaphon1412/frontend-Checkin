@@ -5,7 +5,8 @@ import axiosInstance from '../../utils/api/axiosIntance.js'
 
 export const useConsign = createAsyncThunk('api/consign', async ({ emailFrom, emailTo,starConsign,text }) => {
     console.log(emailFrom, emailTo,starConsign,text)
-    const response = await axiosInstance.post('api/consign', { emailFrom, emailTo,starConsign,text });
+    const numPoint = parseInt(starConsign)
+    const response = await axiosInstance.post('api/consign', { emailFrom, emailTo,starConsign:numPoint,text });
     const data = await response.data;
    
     return data;
@@ -17,6 +18,12 @@ export const useConsign = createAsyncThunk('api/consign', async ({ emailFrom, em
  
     return data;
  }); 
+
+ export const checkIn = createAsyncThunk('api/checkIn', async ({dateCheckIn,star}) => {
+  const response = await axiosInstance.post('api/checkin',{dateCheckIn,points:star});
+  const data = await response.data;
+  return data;
+ });
 
 export const getHistory = createAsyncThunk('api/userDateCheckIn', async () => {
   const  response = await axiosInstance.get('api/userDateCheckIn');
@@ -79,7 +86,18 @@ export  const  apiSlice = createSlice({name:'api', initialState: initialStateAPI
             state.status = 'failed';
             state.error = action.error.message;
           } )
-
+          .addCase(checkIn.pending, (state) => {
+            state.status = 'loading';
+          })
+          .addCase(checkIn.fulfilled, (state, action) => {
+            state.status = 'succeeded';
+            state.code = action.payload.code;
+           
+          } )
+          .addCase(checkIn.rejected, (state, action) => {
+            state.status = 'failed';
+            state.error = action.error.message;
+          } )
       },
     });
 
