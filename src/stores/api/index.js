@@ -5,7 +5,8 @@ import axiosInstance from '../../utils/api/axiosIntance.js'
 
 export const useConsign = createAsyncThunk('api/consign', async ({ emailFrom, emailTo,starConsign,text }) => {
     console.log(emailFrom, emailTo,starConsign,text)
-    const response = await axiosInstance.post('api/consign', { emailFrom, emailTo,starConsign,text });
+    const numPoint = parseInt(starConsign)
+    const response = await axiosInstance.post('api/consign', { emailFrom, emailTo,starConsign:numPoint,text });
     const data = await response.data;
    
     return data;
@@ -18,8 +19,8 @@ export const useConsign = createAsyncThunk('api/consign', async ({ emailFrom, em
     return data;
  }); 
 
- export const checkIn = createAsyncThunk('api/checkIn', async ({dateCheckIn}) => {
-  const response = await axiosInstance.post('api/checkin',{dateCheckIn});
+ export const checkIn = createAsyncThunk('api/checkIn', async ({dateCheckIn,star}) => {
+  const response = await axiosInstance.post('api/checkin',{dateCheckIn,points:star});
   const data = await response.data;
   return data;
  });
