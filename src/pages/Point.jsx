@@ -8,7 +8,7 @@ function  Point(){
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getCoin())
-    }, [])
+    }, [dispatch])
     let coinUser = useSelector(state => state.apiStore.coin)
     return ( 
         <Base>
